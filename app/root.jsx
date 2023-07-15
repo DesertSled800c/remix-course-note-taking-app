@@ -58,12 +58,12 @@ export function ErrorBoundary() {
           <header>
             <MainNavigation />
           </header>
-          <main>
-            <h1>An error occurred!</h1>
+          <main className="error">
+            <h1>An error occurred1</h1>
             <p>
               Status: {error.status}
               <br />
-              {error.data.message}
+              {error.message}
             </p>
             <p>
               Back to <Link to="/">safety</Link>!
@@ -79,7 +79,7 @@ export function ErrorBoundary() {
 
   let errorMessage = "Unknown error";
   if (error instanceof Error) {
-    errorMessage = error.message;
+    errorMessage = error;
   }
 
   return (
@@ -89,15 +89,19 @@ export function ErrorBoundary() {
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <Meta />
         <Links />
-        <title>An error occurred!</title>
+        <title>An error occurred3</title>
       </head>
       <body>
         <header>
           <MainNavigation />
         </header>
         <main className="error">
-          <h1>An error occurred!</h1>
-          <p>{errorMessage}</p>
+          <h1>An error occurred2</h1>
+          <p>
+            Status: {error.status}
+            <br />
+            {errorMessage}
+          </p>
           <p>
             Back to <Link to="/">safety</Link>!
           </p>
